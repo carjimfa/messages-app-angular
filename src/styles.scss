@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12,  1fr);
+    grid-gap: 1rem;
+    counter-reset: div;
+  }
+
+  .grid-center{
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .grid-baseline{
+    justify-items: baseline;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+
+  .grid-3-9{
+    grid-template-columns: 25% 75%;
+  }
+  
+  .col-1 {
+    grid-column: auto/span 1;
+  }
+  
+  .col-2 {
+    grid-column: auto/span 2;
+  }
+  
+  .col-3 {
+    grid-column: auto/span 3;
+  }
+  
+  .col-4 {
+    grid-column: auto/span 4;
+  }
+  
+  .col-5 {
+    grid-column: auto/span 5;
+  }
+  
+  .col-6 {
+    grid-column: auto/span 6;
+  }
+  
+  .col-7 {
+    grid-column: auto/span 7;
+  }
+  
+  .col-8 {
+    grid-column: auto/span 8;
+  }
+  
+  .col-9 {
+    grid-column: auto/span 9;
+  }
+  
+  .col-10 {
+    grid-column: auto/span 10;
+  }
+  
+  .col-11 {
+    grid-column: auto/span 11;
+  }
+  
+  .col-12 {
+    grid-column: auto/span 12;
+  }
+
+  .message{
+    background-color: darkgray;
+    transition: all ease-in-out 0.2s;
+    color: white;
+  }
+
+  .message.mine{
+    color: white;
+    background-color: rgb(0, 102, 255)!important;
+    text-align: right;
+  }
