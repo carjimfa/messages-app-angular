@@ -7,6 +7,7 @@ import { PostMessageRequestDto } from 'src/app/models/post-message-request-dto';
 import { Message } from 'src/app/models/message';
 import { WebSocketService } from 'src/app/services/web-socket.service';
 import { MessagesService } from 'src/app/services/messages.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-home',
@@ -14,76 +15,41 @@ import { MessagesService } from 'src/app/services/messages.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  loginForm: FormGroup;
-  messageForm: FormGroup;
-  user:User;
   
 
-  constructor(private apiClient:ApiService,
-    private formBuilder:FormBuilder,
-    private webSocketService:WebSocketService,
-    private messagesService:MessagesService) { 
-      this.loginForm=new FormGroup({});
-      this.messageForm=new FormGroup({});
+  constructor(private webSocketService:WebSocketService,
+    private messagesService:MessagesService,
+    private usersService:UsersService
+    ) 
+    { 
+      
     }
 
   ngOnInit(): void {
-
-    this.loginForm=this.formBuilder.group({
-      username:['', Validators.required]
-    });
-
-    this.messageForm=this.formBuilder.group({
-      content:['', Validators.required]
-    });
-
     this.webSocketService.startSocket();
-
-    let username=localStorage.getItem("username");
-    if(username){
-      this.loginForm.controls["username"].setValue(username);
-      this.onSubmit();
-    }
   }
 
   get messages(){
     return this.sortMessages(this.messagesService.messages);
   }
 
+  get user(){
+    return this.usersService.user;
+  }
+
   trackById(index, item:Message){
-    return item.Id; 
+    return item.id; 
   }
 
   sortMessages(countries:Message[]):Message[]{
     return countries.sort(function(a, b){
-      if(a.CreationDate<b.CreationDate){
+      if(a.creationDate<b.creationDate){
         return 1;
       }
       return -1;
     })
   }
 
-  onSubmit(){
-    let requestDto=new LoginRequestDto({
-      username:this.loginForm.controls["username"].value
-    })
-    this.apiClient.login(requestDto).subscribe((user)=>{
-      localStorage.setItem("username", user.Username);
-      this.user=user;
-      
-    },
-    (error)=>{
-      throw new Error(error);
-    })
-  }
-
-  postMessage(){
-    let requestDto=new PostMessageRequestDto({
-      content:this.messageForm.controls["content"].value,
-      userId:this.user.Id
-    })
-    this.webSocketService.sendNewMessage(requestDto);
-    this.messageForm.controls["content"].setValue("");
-  }
+  
 
 }

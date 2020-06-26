@@ -2,6 +2,7 @@
   <div class="col-12" style="position: fixed;width: 100vw;">
     <mat-toolbar>
       <span>Messages App</span>
+      <span class="toolbarUser" *ngIf="user">Logged in as: {{user.username}}</span>
     </mat-toolbar>
   </div>
 </div>

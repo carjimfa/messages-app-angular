@@ -1,6 +1,6 @@
 export class SocketMessageResponseDto {
-    Type:MessageType;
-    Content:any;
+    type:MessageType;
+    content:any;
 }
 
 export enum MessageType

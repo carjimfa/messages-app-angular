@@ -17,7 +17,7 @@ export class MessagesService {
     });
 
     webSocketService.newMessageUpdates().subscribe((message)=>{
-      if(message.Content && message.User){
+      if(message.content && message.user){
         this.messageReceived(message);
       }
     });

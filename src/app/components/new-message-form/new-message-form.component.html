@@ -1,0 +1,6 @@
+<form class="grid" [formGroup]="messageForm" (ngSubmit)="postMessage()" style="min-height: calc(20vh - 32px); padding: 50px 0 0 0;">
+    <mat-form-field class="col-12">
+        <textarea matInput type="text" placeholder="Type your message..." formControlName="content" id="content" style="background-color: #ddd;padding: 5px;"></textarea>
+    </mat-form-field>
+    <button class="col-12 primary" mat-button color="primary" type="submit" [disabled]="!user || messageForm.invalid" [ngClass]="{'disabled':!user || messageForm.invalid}">Post</button>
+</form>

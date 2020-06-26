@@ -1,6 +1,6 @@
 export interface BaseEntity {
-    Id:string;
-    CreationDate:Date;
-    ModificationDate:Date;
-    IsDeleted:boolean;
+    id:string;
+    creationDate:Date;
+    modificationDate:Date;
+    isDeleted:boolean;
 }

@@ -1,14 +1,13 @@
 import { Message } from './message';
 import { BaseEntity } from './base-entity';
-import { HttpResponse } from '@angular/common/http';
 
 export class User implements IUser {
-    Id: string;
-    CreationDate: Date;
-    ModificationDate: Date;
-    IsDeleted: boolean;
-    Username: string;
-    Messages: Message[];
+    id: string;
+    creationDate: Date;
+    modificationDate: Date;
+    isDeleted: boolean;
+    username: string;
+    messages: Message[];
 
     constructor(values?: IUser) {
         Object.assign(this, values);
@@ -16,12 +15,12 @@ export class User implements IUser {
 
     init(_data:any){
         if(_data){
-            this.Id=_data["Id"]?_data["Id"]:_data["id"];
-            this.CreationDate=_data["CreationDate"]?_data["CreationDate"]:_data["creationDate"];
-            this.ModificationDate=_data["ModificationDate"]?_data["ModificationDate"]:_data["modificationDate"];
-            this.IsDeleted=_data["IsDeleted"]?_data["IsDeleted"]:_data["isDeleted"];
-            this.Username=_data["Username"]?_data["Username"]:_data["username"];
-            this.Messages=_data["Messages"]?_data["Messages"]:_data["messages"];
+            this.id=_data["id"];
+            this.creationDate=_data["creationDate"];
+            this.modificationDate=_data["modificationDate"];
+            this.isDeleted=_data["isDeleted"];
+            this.username=_data["username"];
+            this.messages=_data["messages"];
         }
     }
 
@@ -34,6 +33,6 @@ export class User implements IUser {
 }
 
 export interface IUser extends BaseEntity {
-    Username: string;
-    Messages: Message[];
+    username: string;
+    messages: Message[];
 }

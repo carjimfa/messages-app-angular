@@ -2,13 +2,13 @@ import { BaseEntity } from './base-entity';
 import { User } from './user';
 
 export class Message implements IMessage {
-    Id: string;
-    CreationDate: Date;
-    ModificationDate: Date;
-    IsDeleted: boolean;
-    Content:string;
-    UserId:string;
-    User:User;
+    id: string;
+    creationDate: Date;
+    modificationDate: Date;
+    isDeleted: boolean;
+    content:string;
+    userId:string;
+    user:User;
 
     constructor(values?: IMessage) {
         Object.assign(this, values);
@@ -16,13 +16,13 @@ export class Message implements IMessage {
 
     init(_data:any){
         if(_data){
-            this.Id=_data["Id"]?_data["Id"]:_data["Id"];
-            this.CreationDate=_data["CreationDate"]?_data["CreationDate"]:_data["CreationDate"];
-            this.ModificationDate=_data["ModificationDate"]?_data["ModificationDate"]:_data["ModificationDate"];
-            this.IsDeleted=_data["IsDeleted"]?_data["IsDeleted"]:_data["IsDeleted"];
-            this.UserId=_data["UserId"]?_data["UserId"]:_data["UserId"];
-            this.User=_data["User"]?_data["User"]:_data["User"];
-            this.Content=_data["Content"]?_data["Content"]:_data["Content"];
+            this.id=_data["id"];
+            this.creationDate=_data["creationDate"];
+            this.modificationDate=_data["modificationDate"];
+            this.isDeleted=_data["isDeleted"];
+            this.userId=_data["userId"];
+            this.user=_data["user"];
+            this.content=_data["content"];
         }
     }
 
@@ -35,7 +35,7 @@ export class Message implements IMessage {
 }
 
 export interface IMessage extends BaseEntity{
-    Content:string;
-    UserId:string;
-    User:User;
+    content:string;
+    userId:string;
+    user:User;
 }

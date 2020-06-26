@@ -28,18 +28,18 @@ export class WebSocketService {
     this.socket.addEventListener("message", (ev => {
       var socketMessageResponse: SocketMessageResponseDto = JSON.parse(ev.data);
       console.log('message object', socketMessageResponse);
-      switch (socketMessageResponse.Type) {
+      switch (socketMessageResponse.type) {
         case MessageType.AllMessages:
-          this.allMessagesSubject.next(socketMessageResponse.Content);
+          this.allMessagesSubject.next(socketMessageResponse.content);
           break;
         case MessageType.NewMessage:
-          this.newMessageSubject.next(socketMessageResponse.Content);
+          this.newMessageSubject.next(socketMessageResponse.content);
           break;
         case MessageType.SocketUserInfo:
-          this.userInfoReceivedSubject.next(socketMessageResponse.Content);
+          this.userInfoReceivedSubject.next(socketMessageResponse.content);
           break;
         case MessageType.UserConnected:
-          this.userJoinedSubject.next(socketMessageResponse.Content);
+          this.userJoinedSubject.next(socketMessageResponse.content);
           break;
         default:
           break;
