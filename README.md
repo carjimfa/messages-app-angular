@@ -1,27 +1,24 @@
 # MessagesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+This project is built using the Angular CLI, version 9.0.2.
 
-## Development server
+## Cloning and running it
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Open a Terminal in your computer.
 
-## Code scaffolding
+Clone this repository `git clone https://github.com/carjimfa/messages-app-angular.git`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Access the downloaded folder `cd messages-app-angular`.
 
-## Build
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` in a browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Optionally, run `ng serve --o` and it will open automatically.
 
-## Running unit tests
+## API To work
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This app requires MessagesApi to work. Plese go to https://github.com/carjimfa/messagesapi for further instructions in how to clone it and run it.
+When the app is running, you need to change the file `environment.ts` and set the parameter `apiUrl` to the URL where your app is running. By default is `https://localhost:5001`.
 
-## Running end-to-end tests
+## Contact
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Feel free to send a message to carjimfa@gmail.com for further details, questions and more.
