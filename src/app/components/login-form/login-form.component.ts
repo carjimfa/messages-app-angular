@@ -43,4 +43,8 @@ export class LoginFormComponent implements OnInit {
     this.usersService.login(this.loginForm.controls["username"].value);    
   }
 
+  logOut(){
+    this.usersService.logOut();
+  }
+
 }

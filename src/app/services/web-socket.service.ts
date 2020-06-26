@@ -13,12 +13,12 @@ import { MessagesService } from './messages.service';
 export class WebSocketService {
 
   private socket: WebSocket;
-  newMessageSubject: BehaviorSubject<Message> = new BehaviorSubject<Message>(new Message());
-  allMessagesSubject: BehaviorSubject<Array<Message>> = new BehaviorSubject<Array<Message>>(new Array<Message>());
-  userInfoReceivedSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  userJoinedSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
+  private newMessageSubject: BehaviorSubject<Message> = new BehaviorSubject<Message>(new Message());
+  private allMessagesSubject: BehaviorSubject<Array<Message>> = new BehaviorSubject<Array<Message>>(new Array<Message>());
+  private userInfoReceivedSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private userJoinedSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private name: string;
+  
   constructor() { }
  
   startSocket() {

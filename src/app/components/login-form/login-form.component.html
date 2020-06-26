@@ -1,3 +1,4 @@
+<button mat-button color="primary" class="primary" (click)="logOut()">Log Out</button>
 <form *ngIf="!user" class="grid" [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="min-height: calc(20vh - 32px);">
     <mat-form-field class="col-12">
         <input matInput type="text" placeholder="Username" formControlName="username" id="username" [readonly]="user">

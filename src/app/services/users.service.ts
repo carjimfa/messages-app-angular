@@ -32,6 +32,10 @@ export class UsersService{
     return this._user;
   }
 
+  private clearUser(){
+    this._user=null;
+  }
+
   login(username: string) {
 
     let requestDto = new LoginRequestDto({
@@ -45,6 +49,11 @@ export class UsersService{
       (error) => {
         throw new Error(error);
       });
+  }
+
+  logOut(){
+    localStorage.removeItem("username");
+    this.clearUser();
   }
 
 }
