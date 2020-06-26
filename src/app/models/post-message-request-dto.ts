@@ -1,3 +1,5 @@
+import { IPostMessageRequestDto } from './IPostMessageRequestDto';
+
 export class PostMessageRequestDto implements IPostMessageRequestDto{
     content:string;
     userId:string;
@@ -7,7 +9,4 @@ export class PostMessageRequestDto implements IPostMessageRequestDto{
     }
 }
 
-export interface IPostMessageRequestDto{
-    content:string;
-    userId:string;
-}
+

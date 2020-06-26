@@ -7,7 +7,7 @@ import { WebSocketService } from './web-socket.service';
 })
 export class MessagesService {
 
-  _messages:Array<Message>=new Array<Message>();
+  private _messages:Array<Message>=new Array<Message>();
 
   constructor(webSocketService:WebSocketService) { 
     webSocketService.allMessagesUpdates().subscribe((messages)=>{

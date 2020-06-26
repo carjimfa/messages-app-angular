@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { WebSocketService } from './web-socket.service';
-import { ApiService } from './api.service';
 import { LoginRequestDto } from '../models/login-request-dto';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UsersService{
 
 
   private _user: User = null;

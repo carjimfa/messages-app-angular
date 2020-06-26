@@ -1,5 +1,5 @@
 import { Message } from './message';
-import { BaseEntity } from './base-entity';
+import { IUser } from './IUser';
 
 export class User implements IUser {
     id: string;
@@ -32,7 +32,4 @@ export class User implements IUser {
     }
 }
 
-export interface IUser extends BaseEntity {
-    username: string;
-    messages: Message[];
-}
+

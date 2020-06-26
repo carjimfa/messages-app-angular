@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private webSocketService:WebSocketService,
     private messagesService:MessagesService,
-    private usersService:UsersService
-    ) 
+    private usersService:UsersService) 
     { 
       
     }
@@ -29,26 +28,11 @@ export class HomeComponent implements OnInit {
     this.webSocketService.startSocket();
   }
 
-  get messages(){
-    return this.sortMessages(this.messagesService.messages);
-  }
-
   get user(){
     return this.usersService.user;
   }
 
-  trackById(index, item:Message){
-    return item.id; 
-  }
-
-  sortMessages(countries:Message[]):Message[]{
-    return countries.sort(function(a, b){
-      if(a.creationDate<b.creationDate){
-        return 1;
-      }
-      return -1;
-    })
-  }
+  
 
   
 

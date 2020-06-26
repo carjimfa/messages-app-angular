@@ -4,10 +4,6 @@
         <app-new-message-form></app-new-message-form>
     </div>
     <div style="min-height: calc(100vh - 64px);width:calc(70vw - 2rem); margin: 85px 0 0 30vw;">
-        <h1>Messages</h1>
-        <div *ngFor="let m of messages;trackBy:trackById" class="message" [ngClass]="{'mine':user?m.userId == user.id:false}">
-            <h2>{{m.content}}</h2>
-            <h5>{{m.user.username}} - {{m.creationDate}}</h5>
-        </div>
+        <app-messages-feed></app-messages-feed>
     </div>
 </div>

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { NewMessageFormComponent } from './new-message-form/new-message-form.component';
+import { MessagesFeedComponent } from './messages-feed/messages-feed.component';
 
 @NgModule({
   imports: [
@@ -22,10 +23,11 @@ import { NewMessageFormComponent } from './new-message-form/new-message-form.com
     MatInputModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginFormComponent, NewMessageFormComponent],
+  declarations: [LoginFormComponent, NewMessageFormComponent, MessagesFeedComponent],
   exports: [
     LoginFormComponent,
-    NewMessageFormComponent
+    NewMessageFormComponent,
+    MessagesFeedComponent
   ]
 })
 export class ComponentsModule { }

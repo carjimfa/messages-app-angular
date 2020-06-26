@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Message } from '../models/message';
-import { SocketMessageResponseDto, MessageType } from '../models/socket-message-response-dto';
+import { SocketMessageResponseDto } from '../models/socket-message-response-dto';
+import { MessageType } from "../models/MessageType";
 import { PostMessageRequestDto } from '../models/post-message-request-dto';
 import { SocketMessageRequestDto } from '../models/socket-message-request-dto';
 import { MessagesService } from './messages.service';

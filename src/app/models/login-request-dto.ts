@@ -1,3 +1,5 @@
+import { ILoginRequestDto } from './ILoginRequestDto';
+
 export class LoginRequestDto implements ILoginRequestDto{
     username:string;
     
@@ -6,6 +8,4 @@ export class LoginRequestDto implements ILoginRequestDto{
     }
 }
 
-export interface ILoginRequestDto{
-    username:string;
-}
+

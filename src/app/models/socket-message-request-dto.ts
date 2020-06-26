@@ -1,3 +1,5 @@
+import { ISocketMessageRequestDto } from './ISocketMessageRequestDto';
+
 export class SocketMessageRequestDto {
     type:number;
     content:any;
@@ -7,7 +9,3 @@ export class SocketMessageRequestDto {
     }
 }
 
-export interface ISocketMessageRequestDto{
-    type:number;
-    content:any;
-}

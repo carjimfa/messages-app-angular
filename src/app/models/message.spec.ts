@@ -1,4 +1,5 @@
-import { Message, IMessage } from './message';
+import { Message } from './message';
+import { IMessage } from "./IMessage";
 
 describe('Message', () => {
   it('should create an instance', () => {

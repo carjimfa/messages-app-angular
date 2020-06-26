@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IApiService } from './iapi-service';
 import { LoginRequestDto } from '../models/login-request-dto';
 import { User } from '../models/user';
-import { PostMessageRequestDto } from '../models/post-message-request-dto';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -10,7 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService implements IApiService{
+export class ApiService{
   
   baseUrl:string=environment.apiUrl;
 
